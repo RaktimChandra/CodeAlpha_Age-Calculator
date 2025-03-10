@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Age Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator-card">
+            <h1><i class="fas fa-calculator"></i> Age Calculator</h1>
+            <div class="tabs">
+                <button class="tab-btn active" onclick="switchTab('age')">
+                    <i class="fas fa-hourglass-half"></i> Age
+                </button>
+                <button class="tab-btn" onclick="switchTab('date')">
+                    <i class="fas fa-calendar-alt"></i> Date Diff
+                </button>
+                <button class="tab-btn" onclick="switchTab('zodiac')">
+                    <i class="fas fa-star"></i> Zodiac
+                </button>
+                <button class="tab-btn" onclick="switchTab('timeline')">
+                    <i class="fas fa-stream"></i> Timeline
+                </button>
+                <button class="tab-btn" onclick="switchTab('stats')">
+                    <i class="fas fa-chart-bar"></i> Stats
+                </button>
+            </div>
+            
+            <div id="age-calculator" class="tab-content active">
+                <div class="input-group">
+                    <label for="birthDate">Date of Birth:</label>
+                    <input type="date" id="birthDate" required>
+                </div>
+                <button onclick="calculateAge()" class="primary-btn">
+                    <i class="fas fa-hourglass-half"></i> Calculate Age
+                </button>
+                <div class="result" id="result"></div>
+                <div class="details" id="age-details">
+                    <div class="detail-box">
+                        <span class="label">Years</span>
+                        <span class="value" id="years">-</span>
+                    </div>
+                    <div class="detail-box">
+                        <span class="label">Months</span>
+                        <span class="value" id="months">-</span>
+                    </div>
+                    <div class="detail-box">
+                        <span class="label">Days</span>
+                        <span class="value" id="days">-</span>
+                    </div>
+                </div>
+                <div class="birthday-countdown" id="birthday-countdown">
+                    <div class="countdown-title">Next Birthday In:</div>
+                    <div class="countdown-boxes">
+                        <div class="countdown-box">
+                            <span class="count" id="countdown-months">-</span>
+                            <span class="label">Months</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span class="count" id="countdown-days">-</span>
+                            <span class="label">Days</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span class="count" id="countdown-hours">-</span>
+                            <span class="label">Hours</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="extra-info" id="extra-info"></div>
+            </div>
+
+            <div id="date-calculator" class="tab-content">
+                <div class="input-group">
+                    <label for="startDate">Start Date:</label>
+                    <input type="date" id="startDate" required>
+                </div>
+                <div class="input-group">
+                    <label for="endDate">End Date:</label>
+                    <input type="date" id="endDate" required>
+                </div>
+                <button onclick="calculateDateDifference()" class="primary-btn">
+                    <i class="fas fa-calendar-alt"></i> Calculate Difference
+                </button>
+                <div class="result" id="diff-result"></div>
+                <div class="date-facts" id="date-facts"></div>
+            </div>
+
+            <div id="zodiac-calculator" class="tab-content">
+                <div class="input-group">
+                    <label for="zodiacDate">Birth Date:</label>
+                    <input type="date" id="zodiacDate" required>
+                </div>
+                <button onclick="calculateZodiac()" class="primary-btn">
+                    <i class="fas fa-star"></i> Show Zodiac Info
+                </button>
+                <div class="zodiac-result">
+                    <div class="zodiac-sign" id="zodiac-sign"></div>
+                    <div class="zodiac-info" id="zodiac-info"></div>
+                    <div class="compatibility" id="compatibility"></div>
+                </div>
+            </div>
+
+            <div id="timeline-calculator" class="tab-content">
+                <div class="input-group">
+                    <label for="timelineDate">Birth Date:</label>
+                    <input type="date" id="timelineDate" required>
+                </div>
+                <button onclick="generateTimeline()" class="primary-btn">
+                    <i class="fas fa-stream"></i> Generate Timeline
+                </button>
+                <div class="timeline" id="timeline">
+                    <div class="milestone-container" id="milestone-container"></div>
+                </div>
+            </div>
+
+            <div id="stats-calculator" class="tab-content">
+                <div class="input-group">
+                    <label for="statsDate">Birth Date:</label>
+                    <input type="date" id="statsDate" required>
+                </div>
+                <button onclick="calculateStats()" class="primary-btn">
+                    <i class="fas fa-chart-bar"></i> Generate Statistics
+                </button>
+                <div class="stats-container">
+                    <div class="stats-grid" id="stats-grid"></div>
+                    <div class="stats-chart" id="stats-chart"></div>
+                </div>
+            </div>
+
+            <div class="share-section">
+                <button onclick="shareResults()" class="secondary-btn">
+                    <i class="fas fa-share-alt"></i> Share Results
+                </button>
+                <button onclick="toggleTheme()" class="secondary-btn" id="theme-toggle">
+                    <i class="fas fa-moon"></i> Dark Mode
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
