@@ -22,13 +22,13 @@ A modern, feature-rich web application for calculating age and exploring life st
 
 ## Live Demo
 
-[View Live Demo](https://your-github-username.github.io/age-calculator/)
+[View Live Demo](https://RaktimChandra.github.io/CodeAlpha_Age-Calculator/)
 
 ## Getting Started
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-github-username/age-calculator.git
+   git clone https://github.com/RaktimChandra/CodeAlpha_Age-Calculator.git
    ```
 
 2. Open `index.html` in your web browser or use a local server:
